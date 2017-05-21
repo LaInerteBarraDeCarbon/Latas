@@ -2,7 +2,9 @@ package latas;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class SecuenciaLatas {
@@ -24,8 +26,7 @@ public class SecuenciaLatas {
 	 */
 	private int maximaSegunda;
 	/**
-	 * Distancia entre el final de la primera secuencia y el principio de la
-	 * segunda secuencia. <br>
+	 * Distancia entre la primera secuencia y la segunda secuencia. <br>
 	 */
 	private int distancia;
 
@@ -165,5 +166,50 @@ public class SecuenciaLatas {
 	 */
 	public int getDistancia() {
 		return this.distancia;
+	}
+
+	/**
+	 * Graba el archivo con los resultados. <br>
+	 * 
+	 * @param path
+	 *            Dirección del archivo. <br>
+	 */
+	public void grabarArchivo(final String path) {
+		PrintWriter salida;
+		try {
+			salida = new PrintWriter(new FileWriter(path));
+			salida.println(this.cantidad);
+			salida.println(this.maximaPrimera);
+			salida.println(this.maximaSegunda);
+			salida.println(this.distancia);
+			salida.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void generarFatiga(final String path) {
+		PrintWriter salida;
+		try {
+			salida = new PrintWriter(new FileWriter(path));
+			int i = 0;
+			int cantidad = 1;
+			int actual = 0;
+			while (i < 5000){
+				while(actual < cantidad && i < 4998){
+					salida.print("G ");
+					actual++;
+					i++;
+				}
+				salida.print("A ");
+				cantidad++;
+				actual = 0;
+				i++;
+			}
+			salida.print("F");
+			salida.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
