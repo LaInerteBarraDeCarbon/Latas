@@ -34,6 +34,6 @@ public class TestSecuenciaLatas {
 	public void testFatiga() {
 		SecuenciaLatas secuencia = new SecuenciaLatas(archivoIn + "02_Caso_Fatiga.in");
 		secuencia.resolver();
-		secuencia.grabarArchivo(archivoOut + "02_Caso_Fatiga.in");
+		secuencia.grabarArchivo(archivoOut + "02_Caso_Fatiga.out");
 	}
 }

@@ -188,6 +188,7 @@ public class SecuenciaLatas {
 		}
 	}
 	
+	
 	public void generarFatiga(final String path) {
 		PrintWriter salida;
 		try {
