@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TestSecuenciaLatas {
-	private static String archivoIn = "Preparacion de Prueba/Entrada/";
-	private static String archivoOut = "Preparacion de Prueba/Salida/";
+	private static String archivoIn = "Preparacion de Prueba/Lote de Prueba/Entrada/";
+	private static String archivoOut = "Ejecuccion de Prueba/Salida Obtenida/";
 
 	@Test
 	public void testBasico() {
